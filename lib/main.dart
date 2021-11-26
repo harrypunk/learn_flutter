@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 
 import 'counter.dart'; // Import the Counter
+import 'counter_text.dart';
 
 void main() => runApp(const MyApp());
 
@@ -39,14 +40,10 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'mobx example',
             ),
-            // Wrapping in the Observer will automatically re-render on changes to counter.value
             Observer(
-              builder: (_) => Text(
-                '${counter.value}',
-                style: Theme.of(context).textTheme.headline4,
-              ),
+              builder: (_) => CounterText(num: counter.value),
             ),
           ],
         ),

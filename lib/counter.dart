@@ -9,7 +9,7 @@ abstract class _Counter with Store {
   int value = 3;
 
   @action
-  void increment(){
-    value = value * 2;
+  void increment() {
+    value += 2;
   }
 }
